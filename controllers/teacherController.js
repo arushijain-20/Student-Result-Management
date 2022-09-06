@@ -18,9 +18,9 @@ const teacher_login_post = (req, res) => {
     }
 };
 
-const teacher_viewall_get = async (req, res) => {
+const teacher_viewAll_get = async (req, res) => {
     const allStudents = await Student.find() 
-    res.render("teacher/viewall", {student : allStudents})
+    res.render("teacher/viewAll", {student : allStudents})
 };
 
 const teacher_edit_get =async (req, res) => {
@@ -29,11 +29,11 @@ const teacher_edit_get =async (req, res) => {
 };
 const teacher_edit_post =async (req, res) => {
     const user = await Student.findByIdAndUpdate(req.params.id,req.body)
-    res.redirect("/teacher/viewall")
+    res.redirect("/teacher/viewAll")
 };
 const teacher_delete_get =async (req, res) => {
     await Student.findByIdAndDelete(req.params.id)
-    res.redirect("/teacher/viewall")
+    res.redirect("/teacher/viewAll")
 };
 const teacher_option_get = (req,res) => {
     res.render("teacher/option")
@@ -60,7 +60,7 @@ const teacher_add_post = async (req, res) => {
 module.exports={
     teacher_login_get,
     teacher_login_post,
-    teacher_viewall_get,
+    teacher_viewAll_get,
     teacher_edit_get,
     teacher_edit_post,
     teacher_delete_get,

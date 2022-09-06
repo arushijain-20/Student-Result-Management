@@ -1,25 +1,65 @@
 body{
   margin-left: 10px;
+  font-family:Georgia, 'Times New Roman', Times, serif
 }
 .navbar{
-  background-color: rgb(145, 219, 176);
+  background-color: rgb(14, 21, 93);
   margin-left: -10px;    
 }
 .navbar-brand{
- color: black ;
+ color: rgb(247, 235, 235) ;
  font-weight: bold;
- margin-left: 40%;
+ margin-left: 45%;
+ 
+}
+
+.home-container{
+  display: flex;
+  justify-content:center;
+  align-items: center;
+
+}
+.home-col{
+  padding:2% 10%;
+  margin: 2%;
+
+}
+.login{
+  border:1px solid rgb(14, 21, 93);
+  border-radius:5px
 }
 .text{
-  margin-left: 47%;
-  margin-top: 60px;
-  font-weight: bold;
-  margin-bottom: -10px;
+  font-size:30px;
+  font-weight:bold;
+  text-align: center;
+  margin-top: 50px;
+  color:rgb(14, 21, 93)
+}
+.teachLog {
+  height: 50vh;
+ width: 100%;
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: center;
 }
 .btn{
-  margin-right: 30px;  
+ border:1px solid rgb(14, 21, 93);
   font-weight: bold;
+margin-bottom: 5%;
+
 }
+.btn a{
+  text-decoration: none;
+  color:rgb(14, 21, 93);
+  
+}
+
+.btn a:hover{
+  color: rgb(36, 36, 144);
+}
+
+
 .optionDiv {
   width: 100vw;
   height: 85vh;
@@ -30,13 +70,7 @@ body{
 .optionDiv button {
   margin: 0px 100px;  
 }
-.teachLog {
-  height: 50vh;
-  width: 100vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
 .teachForm {    
   padding: 60px 40px;
   border-radius: 10px;
