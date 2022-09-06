@@ -20,7 +20,18 @@ const teacher_login_post = (req, res) => {
 
 const teacher_viewAll_get = async (req, res) => {
     const allStudents = await Student.find() 
-    res.render("teacher/viewAll", {student : allStudents})
+   
+    let max_val=0;
+    let max_atten=0;
+    for(let i=0;i<allStudents.length;i++){
+     if(allStudents[i].score>max_val){
+        max_val=allStudents[i].score;
+     }
+     if(allStudents[i].attendance>max_atten){
+        max_atten=allStudents[i].attendance;
+     }
+    }
+    res.render("teacher/viewAll", {student : allStudents, maxval:max_val,max_atten:max_atten});
 };
 
 const teacher_edit_get =async (req, res) => {
@@ -45,8 +56,9 @@ const teacher_add_post = async (req, res) => {
     const singleStudent = new Student({
         name : req.body.name,  
         roll : req.body.roll,             
-        dob : req.body.dob,
-        score : req.body.score        
+        course : req.body.course,
+        score : req.body.score,
+        attendance:req.body.attendance       
     })
     try {
         const newStudent = await singleStudent.save();

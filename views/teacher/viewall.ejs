@@ -6,23 +6,67 @@
       <tr>
         <th scope="col">Roll No.</th>
         <th scope="col">Name</th>       
-        <th scope="col">Date of Birth</th>
+        <th scope="col">Course</th>
         <th scope="col">Score</th>
+        <th scope="col">Attendance</th>
         <th scope="col">Actions</th>
       </tr>
     </thead>
     <tbody>
+
         <%  student.forEach(element => { %>
-            <tr class="head">
+          <% if(maxval==element.score && max_atten==element.attendance){%>
+            <tr class="head arushi-suc">
                 <td><%= element.roll %></td>
                 <td><%= element.name %></td>               
-                <td><%= element.dob %></td>
+                <td><%= element.course %></td>
                 <td><%= element.score %></td> 
+                <td><%= element.attendance %></td> 
                 <td>
                   <a href="/teacher/edit/<%= element._id %> "><img style="margin: 0px 5px;" src="https://img.icons8.com/material-outlined/30/000000/edit.png"/></a>
                   <a href="/teacher/delete/<%= element._id %> "><img style="margin: 0px 5px;" src="https://img.icons8.com/ios-glyphs/30/000000/filled-trash.png"/></a>
                 </td>
               </tr>
+            
+              <% } else if(maxval==element.score && max_atten!=element.attendance){ %>
+                <tr class="head arushi-score">
+                  <td><%= element.roll %></td>
+                  <td><%= element.name %></td>               
+                  <td><%= element.course %></td>
+                  <td><%= element.score %></td> 
+                  <td><%= element.attendance %></td> 
+                  <td>
+                    <a href="/teacher/edit/<%= element._id %> "><img style="margin: 0px 5px;" src="https://img.icons8.com/material-outlined/30/000000/edit.png"/></a>
+                    <a href="/teacher/delete/<%= element._id %> "><img style="margin: 0px 5px;" src="https://img.icons8.com/ios-glyphs/30/000000/filled-trash.png"/></a>
+                  </td>
+                </tr>
+                
+                <% } else if(maxval!=element.score && max_atten==element.attendance){%>
+                  <tr class="head arushi-atten">
+                      <td><%= element.roll %></td>
+                      <td><%= element.name %></td>               
+                      <td><%= element.course %></td>
+                      <td><%= element.score %></td> 
+                      <td><%= element.attendance %></td> 
+                      <td>
+                        <a href="/teacher/edit/<%= element._id %> "><img style="margin: 0px 5px;" src="https://img.icons8.com/material-outlined/30/000000/edit.png"/></a>
+                        <a href="/teacher/delete/<%= element._id %> "><img style="margin: 0px 5px;" src="https://img.icons8.com/ios-glyphs/30/000000/filled-trash.png"/></a>
+                      </td>
+                    </tr>
+                  
+                    <% } else{ %>
+                      <tr class="head ">
+                        <td><%= element.roll %></td>
+                        <td><%= element.name %></td>               
+                        <td><%= element.course %></td>
+                        <td><%= element.score %></td> 
+                        <td><%= element.attendance %></td> 
+                        <td>
+                          <a href="/teacher/edit/<%= element._id %> "><img style="margin: 0px 5px;" src="https://img.icons8.com/material-outlined/30/000000/edit.png"/></a>
+                          <a href="/teacher/delete/<%= element._id %> "><img style="margin: 0px 5px;" src="https://img.icons8.com/ios-glyphs/30/000000/filled-trash.png"/></a>
+                        </td>
+                      </tr>
+                      <%}%>
         <%}) %>
     </tbody>
   </table>

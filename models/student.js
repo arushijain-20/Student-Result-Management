@@ -11,10 +11,12 @@ const studentSchema = new Schema({
     unique : true
   } ,
   name: String,     
-  dob:{
-    type:Date
-  } ,
-  score:Number 
+ course:String,
+
+
+  score:Number ,
+  attendance:Number
+
 });
 
 //exporting the model

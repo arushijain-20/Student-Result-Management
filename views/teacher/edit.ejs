@@ -11,12 +11,16 @@
       </div>     
      
       <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">Date of Birth : </label>
-        <input type="date" name="dob" value="<%= user.dob  %> " required class="form-control" id="exampleInputEmail1">
+        <label for="exampleInputEmail1" class="form-label">Course : </label>
+        <input type="texr" name="course" value="<%= user.course  %> " required class="form-control" id="exampleInputEmail1">
       </div>
       <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">Score : </label>
         <input type="number" name="score" value="<%= user.score  %> " required class="form-control" id="exampleInputEmail1">
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Attendance : </label>
+        <input type="number" name="attendance" value="<%=user.attendance %>" required class="form-control" id="exampleInputEmail1">
       </div>
     <button type="submit" class="btn btn-success">Update</button>
 </form>
